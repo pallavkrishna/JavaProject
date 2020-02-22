@@ -4,13 +4,14 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.Test;
+
 
 public class GetAPIExample {
 
-    @Test
+
     public void weatherExample(){
-        RestAssured.baseURI="http://restapi.demoqa.com/utilities/weather/city";
+        RestAssured.baseURI="http://restapi.demoqa.com/utilities/weathe";
+        //RestAssured.baseURI="http://restapi.demoqa.com/utilities/weather/city";
         RequestSpecification httpRequest=RestAssured.given();
         Response response=httpRequest.request(Method.GET,"/Chennai");
         String respBody=response.getBody().asString();
